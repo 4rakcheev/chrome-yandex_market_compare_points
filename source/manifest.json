@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Yandex market compare points",
+  "description": "This extension produce points to compare page of Yandex.market service",
+  "version": "0.1",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+	"default_title": "Compare points is working! Refresh the compare page"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "web_accessible_resources" : [
+	"script.js"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://market.yandex.ru/compare.xml*"],
+	  "run_at": "document_end",
+	  "css": ["style.css"],
+      "js": ["contentscript.js"]
+    }
+  ]
+}
