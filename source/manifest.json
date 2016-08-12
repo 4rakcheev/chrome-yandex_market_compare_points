@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "Yandex market compare points",
-  "description": "This extension produce points to compare page of Yandex.market service",
-  "version": "0.1",
+  "name": "Очки сравнения Yandex.market",
+  "description": "This extension produce points of comparison at the Yandex.market service compare page",
+  "version": "0.2",
 
   "browser_action": {
     "default_icon": "icon.png",
@@ -14,13 +14,13 @@
     "activeTab"
   ],
   "web_accessible_resources" : [
-	"script.js"
+	"market-points-main.js"
   ],
   "content_scripts": [
     {
       "matches": ["https://market.yandex.ru/compare.xml*"],
 	  "run_at": "document_end",
-	  "css": ["style.css"],
+	  "css": ["market-points-main.css"],
       "js": ["contentscript.js"]
     }
   ]
